@@ -1,3 +1,77 @@
-<div fxLayout="flex" fxLayoutAlign="center" class="main-content-container">
-    <h1>About TorleyDev!</h1>
+<div fxLayout="column" fxLayoutAlign="start center" class="main-content-container">
+    <mat-card class="contact-container">
+        <mat-card-content>
+            <div fxLayout="row">
+                <div fxFlex="30" class="about-profile">
+                    <div>
+                        <img class="profile-pic" src="../../../assets/profilepic.jpeg" />
+                    </div>
+                    <div class="profile-details">
+                        <h2>Patrick torley</h2>
+                        <h3>Software Developer</h3>
+                        <h3>Central Coast, NSW, Australia</h3>
+                    </div>
+                </div>
+                <mat-divider [vertical]="true"></mat-divider>
+                <div fxFlex="70" fxLayout="column" fxLayoutAlign="space-between" class="about-info">
+                    <h1>About TorleyDev</h1>
+                    <div class="about-summary">
+                        <h3>Summary</h3>
+                        <p>TorleyDev is a portfolio of the projects and programming skills of Front-end Developer Patrick Torley. Even as just a junior developer there has been many influences share the best way to progress as a developer is to just start building projects. Below is a list of places worked as well as languages learned and courses accomplished.</p>
+                    </div>
+                    <div class="about-experience">
+                        <h3>Experience</h3>
+                        <div *ngFor="let job of jobs">
+                            <mat-card class="job-card">
+                                <mat-card-title-group fxLayout="column">
+                                  <mat-card-title>{{ job.company }}</mat-card-title>
+                                  <div fxLayout="row" fxLayoutAlign="space-between">
+                                    <mat-card-subtitle>{{ job.position }}</mat-card-subtitle>
+                                    <mat-card-subtitle>{{ job.duration }}</mat-card-subtitle>
+                                  </div>
+                                </mat-card-title-group>
+                                <mat-card-content>
+                                  {{job.summary}}
+                                </mat-card-content>
+                                <mat-card-content>
+                                  {{job.link}}
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                    <div fxLayout="column" class="about-languages">
+                        <h3>languages</h3>
+                        <table mat-table fxFlex [dataSource]="languages" class="mat-elevation-z2">
+                            <!-- Language Column -->
+                            <ng-container matColumnDef="language">
+                              <th mat-header-cell *matHeaderCellDef>Language/Framework</th>
+                              <td mat-cell *matCellDef="let language"> {{language.language}} </td>
+                            </ng-container>
+                            <!-- Experience Column -->
+                            <ng-container matColumnDef="experience">
+                              <th mat-header-cell *matHeaderCellDef>Experience</th>
+                              <td mat-cell *matCellDef="let language"> {{language.experience}} </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <div fxLayout="column" class="about-qualifications">
+                        <h3>Certificates</h3>
+                        <div *ngFor="let cert of certificates">
+                            <mat-card class="certificate-card">
+                                <mat-card-title-group fxLayout="column">
+                                  <mat-card-title>{{ cert.name }}</mat-card-title>
+                                  <div fxLayout="row" fxLayoutAlign="space-between">
+                                    <mat-card-subtitle>{{ cert.institution }}</mat-card-subtitle>
+                                    <mat-card-subtitle>{{ cert.completed }}</mat-card-subtitle>
+                                  </div>
+                                </mat-card-title-group>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>

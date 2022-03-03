@@ -1,0 +1,33 @@
+.contact-container {
+    margin: 3% 0;
+    width: 80%;
+}
+
+.about-profile {
+    padding: 5%;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+}
+
+.about-info {
+    padding: 2.5% 5%;
+}
+
+.job-card {
+    margin-bottom: 2.5%;
+}
+
+.certificate-card {
+    margin-bottom: 2%;
+    mat-card-title {
+        font-size: 18px;
+    }
+}
+
+.about-languages {
+    margin-bottom: 2.5%;
+}
