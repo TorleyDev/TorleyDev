@@ -1,17 +1,35 @@
 <div fxLayout="column" fxLayoutAlign="start center" class="main-content-container">
-    <h1>Contact TorleyDev!</h1>
     <mat-card class="contact-container">
-        <mat-card-header>
-            <mat-card-title>Contact</mat-card-title>
-            <mat-card-subtitle>For enquiries and more information fill out this form and we will get back to you as soon as possible.</mat-card-subtitle>
-        </mat-card-header>
+        <h2>Contact TorleyDev</h2>
+        <p>For enquiries and more information fill out this form and you will be contacted as soon as possible.</p>
         <mat-card-content>
-            <div class="">
-                <label>hello</label>
-            </div>
+            <form fxLayout="column" fxFlex [formGroup]="contactForm" (ngSubmit)="submitForm()">
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <mat-form-field class="name-field" appearance="fill">
+                        <mat-label>First name</mat-label>
+                        <input matInput formControlName="firstName">
+                    </mat-form-field>
+                    <mat-form-field class="name-field" appearance="fill">
+                        <mat-label>Last name</mat-label>
+                        <input matInput formControlName="lastName">
+                    </mat-form-field>
+                </div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Phone</mat-label>
+                    <input type="phone" matInput formControlName="phone">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Comments</mat-label>
+                    <textarea matInput formControlName="comments"></textarea>
+                </mat-form-field>
+              </form>
         </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>Submit</button>
+        <mat-card-actions align="end">
+            <button mat-button type="submit">Submit</button>
         </mat-card-actions>
     </mat-card>
 </div>
